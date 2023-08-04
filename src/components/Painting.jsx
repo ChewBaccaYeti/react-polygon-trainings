@@ -45,9 +45,10 @@
 //     document.querySelector('#root')
 //   );
 
+import PropTypes from 'prop-types';
 import defaultImage from './default.jpg';
 
-  export const Painting = ({ imgUrl, title, quantity, author, avatar, price }) {
+  export const Painting = ({ imgUrl = defaultImage, title, quantity, author = 'unknown', avatar, price }) => {
     return (
       <div>
         <img src={imgUrl} alt={title} />
@@ -60,6 +61,15 @@ import defaultImage from './default.jpg';
         <button></button>
       </div>
     );
+  };
+
+  Painting.propTypes = {
+    imgUrl: PropTypes.string,
+    title: PropTypes.string,
+    quantity: PropTypes.number,
+    author: PropTypes.string,
+    avatar: PropTypes.string,
+    price: PropTypes.number,
   };
 
   export default Painting;
