@@ -1,4 +1,5 @@
-import { PaintingList } from 'components/PaintingList';
+import React from 'react';
+import { PaintingList } from './components/PaintingList';
 import { paintings } from './paintings.json';
 
 export default function App() {
@@ -13,7 +14,8 @@ export default function App() {
         color: '#010101',
       }}
     >
-      <PaintingList items={paintings}></PaintingList>
+      <PaintingList items={paintings} />
     </div>
   );
 }
+
