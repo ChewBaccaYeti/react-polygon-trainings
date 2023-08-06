@@ -1,9 +1,10 @@
 import React from 'react';
-// import { PaintingList } from './components/PaintingList';
-// import { paintings } from './paintings.json';
+import { PageTitle } from './PageTitle/PageTitle';
 
-// export const App = () => {return};
-
-export default function App() {
-  return <div>{/* <PaintingList items={paintings} /> */}</div>;
-}
+export const App = () => {
+  return (
+    <div>
+      <PageTitle />
+    </div>
+  );
+};
