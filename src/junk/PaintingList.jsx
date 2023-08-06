@@ -21,13 +21,14 @@ export function PaintingList({ items }) {
   );
 }
 
-// Передача типов пропсов, а именно массива объектов из базы данных. 
-// Вместо того чтобы описывать каждый из пропсов, 
+// Передача типов пропсов, а именно массива объектов из базы данных.
+// Вместо того чтобы описывать каждый из пропсов,
 // а точнее его типы, Я опишу весь массив используя метод .shape
 PaintingList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-  }),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
   ),
 };
 

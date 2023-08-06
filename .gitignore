@@ -4,6 +4,9 @@
 .vscode/
 .idea/
 
+#lessons
+./junk
+
 # dependencies
 /node_modules
 /.pnp
