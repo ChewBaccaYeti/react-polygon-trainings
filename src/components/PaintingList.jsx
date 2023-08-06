@@ -1,9 +1,9 @@
 import Painting from './Painting';
-
+import PropTypes from 'prop-types';
 
 // const PaintingList = () => {};
 
-function PaintingList({ items }) {
+export function PaintingList({ items }) {
   return (
     <ul>
       {items.map(item => (
@@ -20,5 +20,15 @@ function PaintingList({ items }) {
     </ul>
   );
 }
+
+// Передача типов пропсов, а именно массива объектов из базы данных. 
+// Вместо того чтобы описывать каждый из пропсов, 
+// а точнее его типы, Я опишу весь массив используя метод .shape
+PaintingList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+  }),
+  ),
+};
 
 export default PaintingList;
