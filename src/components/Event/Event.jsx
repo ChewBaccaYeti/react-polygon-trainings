@@ -5,29 +5,30 @@ import {
   FaCalendarAlt,
   FaClock,
 } from 'react-icons/fa';
+import { formatEventStart } from 'utils/formatEventStart';
 import { Card, EventName, Info, Chip } from './Event.styled';
 
 export const Event = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
-  const duration = formatEventDuration(start, end);
+  // const duration = formatEventDuration(start, end);
   return (
     <Card>
       <EventName>{name}</EventName>
       <Info>
-        <FaMapMarkerAlt size={iconSize.sm} />
+        <FaMapMarkerAlt size={16} />
         {location}
       </Info>
       <Info>
-        <FaUserAlt size={iconSize.sm} />
+        <FaUserAlt size={16} />
         {speaker}
       </Info>
       <Info>
-        <FaCalendarAlt size={iconSize.sm} />
+        <FaCalendarAlt size={16} />
         {formattedStart}
       </Info>
       <Info>
-        <FaClock size={iconSize.sm} />
-        {duration}
+        <FaClock size={16} />
+        {/* {duration} */}
       </Info>
       <Chip eventType={type}>{type}</Chip>
     </Card>
