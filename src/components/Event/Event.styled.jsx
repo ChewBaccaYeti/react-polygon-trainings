@@ -55,5 +55,3 @@ export const Chip = styled.span`
     }
   }};
 `;
-
-export default Card;
