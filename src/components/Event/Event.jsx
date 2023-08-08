@@ -6,11 +6,12 @@ import {
   FaClock,
 } from 'react-icons/fa';
 import { formatEventStart } from 'utils/formatEventStart';
+import { formatEventDuration } from 'utils/formatEventDuration';
 import { Card, EventName, Info, Chip } from './Event.styled';
 
 export const Event = ({ name, location, speaker, type, start, end }) => {
   const formattedStart = formatEventStart(start);
-  // const duration = formatEventDuration(start, end);
+  const duration = formatEventDuration(start, end);
   return (
     <Card>
       <EventName>{name}</EventName>
@@ -28,7 +29,7 @@ export const Event = ({ name, location, speaker, type, start, end }) => {
       </Info>
       <Info>
         <FaClock size={16} />
-        {/* {duration} */}
+        {duration}
       </Info>
       <Chip eventType={type}>{type}</Chip>
     </Card>
