@@ -1,3 +1,0 @@
-// import { PaintingList } from './components/PaintingList';
-// import { paintings } from './paintings.json';
-//<PaintingList items={paintings} />
