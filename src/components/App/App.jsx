@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Counter from './components/Counter';
-import Dropdown from './components/Dropdown';
-import ColorPicker from './components/ColorPicker';
-import TodoList from './components/TodoList';
-import initialTodos from './todos.json';
+import Counter from '../Counter/Counter';
+import Dropdown from '../Dropdown/Dropdown';
+import ColorPicker from '../ColorPicker/ColorPicker';
+import ToDoList from '../ToDoList/ToDoList';
+import initialTodos from '../../todos.json';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -38,16 +38,16 @@ class App extends Component {
       <>
         <h1>Состояние компонента</h1>
 
-        {/* <Counter initialValue={10} /> */}
-        {/* <Dropdown /> */}
-        {/* <ColorPicker options={colorPickerOptions} /> */}
+        <Counter initialValue={10} />
+        <Dropdown />
+        <ColorPicker options={colorPickerOptions} />
 
         <div>
           <p>Общее кол-во: {totalTodoCount}</p>
           <p>Кол-во выполненных: {completedTodoCount}</p>
         </div>
 
-        <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <ToDoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </>
     );
   }
