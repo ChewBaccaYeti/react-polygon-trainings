@@ -21,7 +21,10 @@ class ColorPicker extends React.Component {
   };
 
   render() {
-    const { label } = this.props.options[this.state.activeOptionIdx]; // Вычисляемое свойство === то, что вычисляется на базе props и state
+    const { activeOptionIdx } = this.state;
+    const { options } = this.props;
+    const { label } = options[activeOptionIdx];
+    // this.props.options[this.state.activeOptionIdx]; // Вычисляемое свойство === то, что вычисляется на базе props и state
     console.log(label);
 
     return (
