@@ -29,8 +29,9 @@ class App extends Component {
     const { todos } = this.state;
 
     const totalTodoCount = todos.length;
+    // const completedTodoCount = todos.filter(todo => todo.completed === true); Метод .filter на JS
     const completedTodoCount = todos.reduce(
-      (total, todo) => (todo.completed ? total + 1 : total),
+      (total, todo) => (todo.completed ? total + 1 : total), // здесь снова НЕ используется if, иными словами (total, todo) => if (todo.completed ? total + 1 : total), так как это JSX выражение
       0
     );
 
