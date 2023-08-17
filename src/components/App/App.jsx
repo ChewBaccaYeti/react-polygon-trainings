@@ -38,7 +38,7 @@ class App extends Component {
       <>
         <h1>Состояние компонента</h1>
 
-        <Counter initialValue={10} />
+        <Counter initialValue={0} />
         <Dropdown />
         <ColorPicker options={colorPickerOptions} />
 
