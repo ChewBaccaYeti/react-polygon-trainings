@@ -22,9 +22,9 @@ class Dropdown extends Component {
   //     this.setState({ visible: true });
   //   };
 
-  //   hide = () => {
-  //     this.setState({ visible: false });
-  //   };
+  hide = () => {
+    this.setState({ visible: false });
+  };
 
   render() {
     const { visible } = this.state;
@@ -41,8 +41,14 @@ class Dropdown extends Component {
           {visible ? 'Hide' : 'Show'}
         </button>
 
-        <button type="button" className="Dropdown__toggle" onClick={this.hide}>
-          Спрятать
+        <button
+          type="button"
+          className="Dropdown__toggle"
+          onClick={this.hide}
+          onMouseOver={this.colorHover}
+          style={{ backgroundColor: this.state.hoverColor }}
+        >
+          Hide
         </button>
         {this.state.visible && (
           <div className="Dropdown__menu">Выпадающее меню</div>

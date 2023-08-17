@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Counter from '../Counter/Counter';
-import Dropdown from '../Dropdown/Dropdown';
-import ColorPicker from '../ColorPicker/ColorPicker';
-import ToDoList from '../ToDoList/ToDoList';
+import Counter from 'components/Counter';
+import Dropdown from 'components/Dropdown';
+import ColorPicker from 'components/ColorPicker';
+import ToDoList from 'components/ToDoList';
 import initialTodos from '../../todos.json';
 
 const colorPickerOptions = [
