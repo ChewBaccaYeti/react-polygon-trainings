@@ -1,1 +1,1 @@
-export { default } from './ColorPicker'; // реэкспорт
+export { default } from './Container'; // реэкспорт

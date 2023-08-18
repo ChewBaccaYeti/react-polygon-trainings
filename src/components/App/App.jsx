@@ -1,9 +1,9 @@
 //2nd branch for events and state in React.jsx
 import React, { Component } from 'react';
-import Counter from 'components/Counter';
-import Dropdown from 'components/Dropdown';
-import ColorPicker from 'components/ColorPicker';
-import ToDoList from 'components/ToDoList';
+// import Counter from 'components/Counter';
+// import Dropdown from 'components/Dropdown';
+// import ColorPicker from 'components/ColorPicker';
+// import ToDoList from 'components/ToDoList';
 import initialTodos from '../../todos.json';
 import { Container } from 'components/Container';
 
@@ -19,20 +19,25 @@ import { Container } from 'components/Container';
 class App extends Component {
   state = {
     todos: initialTodos,
-    inputlValue: 'Hello, world',
+    name: 'Hello, world',
+    tag: '';
   };
 
   deleteTodo = todoId => {
     this.setState(prevState => ({
-      // todos: prevState.todos.filter(todo => todo.id !== todoId),
+      todos: prevState.todos.filter(todo => todo.id !== todoId),
     }));
   };
 
-  handleInputChange = event => {
+  handleNameChange = event => {
+    this.setState({ name: event.currentTarget.value });
     console.log(event.currentTarget.value);
   };
 
-  this.setState({inputlValue: event.currentTarget.value})
+  handleTagChange = e => {
+    this.setState({ tag: e.currentTarget.value });
+    console.log(e.currentTarget.value);
+  };
 
   render() {
     //     const { todos } = this.state;
@@ -44,11 +49,20 @@ class App extends Component {
     //     );
     return (
       <Container>
-        <input
-          type="text"
-          value={this.state.inputlValue}
-          onChange={this.handleInputChange}
-        ></input>
+        <form>
+          <label>
+            Имя{' '}
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleNameChange}
+            />
+          </label>
+          <label>
+            Прозвище
+            <input type="text" value={this.state.tag} onChange={this.handleTagChange}></input>
+          </label>
+        </form>
       </Container>
       //       <>
       //         <h1>Состояние компонента</h1>
