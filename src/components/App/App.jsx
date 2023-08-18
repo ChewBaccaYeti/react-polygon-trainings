@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 // import ColorPicker from 'components/ColorPicker';
 // import ToDoList from 'components/ToDoList';
 import initialTodos from '../../todos.json';
-import { Container } from 'components/Container';
+import Container from 'components/Container';
+import Form from 'components/Form';
 
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
@@ -28,11 +29,11 @@ class App extends Component {
     }));
   };
 
-  handleChange = e => {
-    const { name, value } = e.currentTarget;
-
-    this.setState({ [name]: value }); // Вычисляемые свойства объектов, в данном случае используем паттерн событий(event) для форм вместо методов ниже.
-    // Данный метод НЕ работает для чекбоксов и радио-кнопок и тд.
+  formSubmitHandler = data => {
+    setTimeout(() => {
+      // Проверка не асинхронность в данном методе.
+      console.log(data);
+    }, 1000);
   };
 
   // handleNameChange = event => {
@@ -61,26 +62,7 @@ class App extends Component {
     //     );
     return (
       <Container>
-        <form>
-          <label>
-            Имя{' '}
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleNameChange}
-            />
-          </label>
-          <label>
-            Прозвище
-            <input
-              type="text"
-              name="tag"
-              value={this.state.tag}
-              onChange={this.handleTagChange}
-            ></input>
-          </label>
-        </form>
+        <Form onSubmit={this.formSubmitHandler}></Form>
       </Container>
       //       <>
       //         <h1>Состояние компонента</h1>
