@@ -19,8 +19,8 @@ import { Container } from 'components/Container';
 class App extends Component {
   state = {
     todos: initialTodos,
-    name: 'Hello, world',
-    tag: '';
+    name: 'Lebovski',
+    tag: 'Dude',
   };
 
   deleteTodo = todoId => {
@@ -29,15 +29,31 @@ class App extends Component {
     }));
   };
 
-  handleNameChange = event => {
-    this.setState({ name: event.currentTarget.value });
-    console.log(event.currentTarget.value);
+  handleChange = e => {
+    console.log(e.currentTarget);
+    console.log(e.currentTarget.name);
+    console.log(e.currentTarget.value);
+
+    this.setState({
+      [e.currentTarget.name]: e.currentTarget.value, // Вычисляемые свойства объектов, в данном случае используем паттерн событий(event) вместо методов ниже.
+    }); // Данный метод НЕ работает для чекбоксов и радио-кнопок и тд.
   };
 
-  handleTagChange = e => {
-    this.setState({ tag: e.currentTarget.value });
-    console.log(e.currentTarget.value);
-  };
+  // handleNameChange = event => {
+  //   console.log(event.currentTarget.value);
+  //   this.setState({ name: event.currentTarget.value });
+  // };
+
+  // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
+  // но грамотнее использовать примитивный паттерн выше.
+
+  // handleTagChange = e => {
+  //   this.setState({ tag: e.currentTarget.value });
+  //   console.log(e.currentTarget.value);
+  // };
+
+  // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
+  // но грамотнее использовать примитивный паттерн выше.
 
   render() {
     //     const { todos } = this.state;
@@ -54,13 +70,19 @@ class App extends Component {
             Имя{' '}
             <input
               type="text"
+              name="name"
               value={this.state.name}
               onChange={this.handleNameChange}
             />
           </label>
           <label>
             Прозвище
-            <input type="text" value={this.state.tag} onChange={this.handleTagChange}></input>
+            <input
+              type="text"
+              name="tag"
+              value={this.state.tag}
+              onChange={this.handleTagChange}
+            ></input>
           </label>
         </form>
       </Container>
