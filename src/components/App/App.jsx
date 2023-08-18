@@ -1,3 +1,4 @@
+//2nd branch for events and state in React.jsx
 import React, { Component } from 'react';
 import Counter from 'components/Counter';
 import Dropdown from 'components/Dropdown';
