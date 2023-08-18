@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { nanoid } from 'nanoid';
 import Container from 'components/Container';
 
 class Form extends Component {
@@ -7,6 +8,11 @@ class Form extends Component {
     tag: 'Dude',
   }; // В данном случае не будет работать сброс значений(reset),
   //так как тут значение контролируется состоянием(state)
+
+  generateUniqueId = () => {
+    const id = nanoid(5);
+    return id;
+  };
 
   handleChange = e => {
     const { name, value } = e.currentTarget;
@@ -31,23 +37,50 @@ class Form extends Component {
     return (
       <Container>
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label htmlFor={this.generateUniqueId()}>
             Имя{' '}
             <input
               type="text"
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
+              id={this.generateUniqueId()}
             />
           </label>
 
-          <label>
-            Прозвище
+          <label htmlFor={this.generateUniqueId()}>
+            Прозвище{' '}
             <input
               type="text"
               name="tag"
               value={this.state.tag}
               onChange={this.handleChange}
+              id={this.generateUniqueId()}
+            ></input>
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor={this.generateUniqueId()}>
+            Имя{' '}
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
+              id={this.generateUniqueId()}
+            />
+          </label>
+
+          <label htmlFor={this.generateUniqueId()}>
+            Прозвище{' '}
+            <input
+              type="text"
+              name="tag"
+              value={this.state.tag}
+              onChange={this.handleChange}
+              id={this.generateUniqueId()}
             ></input>
           </label>
           <button type="submit">Отправить</button>
