@@ -1,4 +1,3 @@
-//2nd branch for events and state in React.jsx
 import React, { Component } from 'react';
 // import Counter from 'components/Counter';
 // import Dropdown from 'components/Dropdown';
@@ -30,13 +29,10 @@ class App extends Component {
   };
 
   handleChange = e => {
-    console.log(e.currentTarget);
-    console.log(e.currentTarget.name);
-    console.log(e.currentTarget.value);
+    const { name, value } = e.currentTarget;
 
-    this.setState({
-      [e.currentTarget.name]: e.currentTarget.value, // Вычисляемые свойства объектов, в данном случае используем паттерн событий(event) вместо методов ниже.
-    }); // Данный метод НЕ работает для чекбоксов и радио-кнопок и тд.
+    this.setState({ [name]: value }); // Вычисляемые свойства объектов, в данном случае используем паттерн событий(event) для форм вместо методов ниже.
+    // Данный метод НЕ работает для чекбоксов и радио-кнопок и тд.
   };
 
   // handleNameChange = event => {
@@ -45,7 +41,7 @@ class App extends Component {
   // };
 
   // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
-  // но грамотнее использовать примитивный паттерн выше.
+  // но грамотнее использовать примитивный паттерн для форм выше.
 
   // handleTagChange = e => {
   //   this.setState({ tag: e.currentTarget.value });
@@ -53,7 +49,7 @@ class App extends Component {
   // };
 
   // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
-  // но грамотнее использовать примитивный паттерн выше.
+  // но грамотнее использовать примитивный паттерн для форм выше.
 
   render() {
     //     const { todos } = this.state;
