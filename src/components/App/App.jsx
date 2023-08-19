@@ -21,6 +21,7 @@ class App extends Component {
     todos: initialTodos,
     name: 'Lebovski',
     tag: 'Dude',
+    experience: 'Junior',
   };
 
   deleteTodo = todoId => {

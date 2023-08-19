@@ -83,6 +83,45 @@ class Form extends Component {
               id={this.generateUniqueId()}
             ></input>
           </label>
+
+          <p>Ваш уровень:</p>
+          <label htmlFor={this.generateUniqueId()}>
+            <input
+              type="radio"
+              name="experience"
+              value="Junior"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'Junior'}
+            />
+            Junior
+          </label>
+
+          <br />
+
+          <label htmlFor={this.generateUniqueId()}>
+            <input
+              type="radio"
+              name="experience"
+              value="Middle"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'Middle'}
+            />
+            Middle
+          </label>
+
+          <br />
+
+          <label htmlFor={this.generateUniqueId()}>
+            <input
+              type="radio"
+              name="experience"
+              value="Senior"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'Senior'}
+            />
+            Senior
+          </label>
+
           <button type="submit">Отправить</button>
         </form>
       </Container>
