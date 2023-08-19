@@ -23,6 +23,22 @@ class Form extends Component {
     // Данный метод НЕ работает для чекбоксов и радио-кнопок и тд.
   };
 
+  // handleNameChange = event => {
+  //   console.log(event.currentTarget.value);
+  //   this.setState({ name: event.currentTarget.value });
+  // };
+
+  // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
+  // но грамотнее использовать примитивный паттерн для форм выше.
+
+  // handleTagChange = e => {
+  //   this.setState({ tag: e.currentTarget.value });
+  //   console.log(e.currentTarget.value);
+  // };
+
+  // Это метод для каждого инпута в рендере, если их мало то можно использовать их,
+  // но грамотнее использовать примитивный паттерн для форм выше.
+
   handleSubmit = e => {
     // Отдельный метод для фомы необходим так как это Submit
     e.preventDefault(); // Вызов данного метода не даст перезапустить страницу по умолчанию

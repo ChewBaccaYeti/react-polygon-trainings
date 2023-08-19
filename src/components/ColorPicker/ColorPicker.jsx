@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import './ColorPicker.css';
 
 class ColorPicker extends React.Component {
@@ -11,6 +12,18 @@ class ColorPicker extends React.Component {
   };
 
   makeOptionClassName = index => {
+    const clsx = classNames('ColorPicker__option', {
+      // В этой строке(15) указан базовый класс, он всегда идет первым и их может быть сколько угодно
+      'ColorPicker__option--active': index === this.state.activeOptionIdx, // В зависимости от этого выражения будет определенно его состояние,
+      //как можно заметить, данное выражение я взял из ранее написанного мною функции,
+      //что я сохранилв переменной optionClasses.
+
+      // Динамический класс(17), можно поставить true и тогда он будет виден всегда,
+      //то есть добавиться этот класс,
+      //а если false то не добавиться, при своем вызове.
+    });
+    console.log(clsx);
+
     const optionClasses = ['ColorPicker__option'];
 
     if (index === this.state.activeOptionIdx) {
