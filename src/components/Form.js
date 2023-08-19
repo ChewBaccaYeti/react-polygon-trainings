@@ -6,6 +6,8 @@ class Form extends Component {
   state = {
     name: 'Lebovski',
     tag: 'Dude',
+    experience: 'Junior',
+    license: false,
   }; // В данном случае не будет работать сброс значений(reset),
   //так как тут значение контролируется состоянием(state)
 
@@ -27,6 +29,10 @@ class Form extends Component {
     this.props.onSubmit(this.state);
 
     this.reset();
+  };
+
+  handleLicenseChange = e => {
+    console.log(e.currentTarget.checked);
   };
 
   reset = () => {
@@ -72,7 +78,6 @@ class Form extends Component {
               id={this.generateUniqueId()}
             />
           </label>
-
           <label htmlFor={this.generateUniqueId()}>
             Прозвище{' '}
             <input
@@ -83,7 +88,6 @@ class Form extends Component {
               id={this.generateUniqueId()}
             ></input>
           </label>
-
           <p>Ваш уровень:</p>
           <label htmlFor={this.generateUniqueId()}>
             <input
@@ -95,9 +99,7 @@ class Form extends Component {
             />
             Junior
           </label>
-
           <br />
-
           <label htmlFor={this.generateUniqueId()}>
             <input
               type="radio"
@@ -108,9 +110,7 @@ class Form extends Component {
             />
             Middle
           </label>
-
           <br />
-
           <label htmlFor={this.generateUniqueId()}>
             <input
               type="radio"
@@ -121,8 +121,19 @@ class Form extends Component {
             />
             Senior
           </label>
-
-          <button type="submit">Отправить</button>
+          <br />
+          <label htmlFor={this.generateUniqueId()}>
+            <input
+              type="checkbox"
+              name="license"
+              onChange={this.handleChange}
+              checked={this.state.license}
+            />{' '}
+            Согласен с условием
+          </label>
+          <button type="submit" disabled={!this.state.license}>
+            Отправить
+          </button>
         </form>
       </Container>
     );

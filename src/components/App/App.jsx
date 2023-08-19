@@ -19,9 +19,6 @@ import Form from 'components/Form';
 class App extends Component {
   state = {
     todos: initialTodos,
-    name: 'Lebovski',
-    tag: 'Dude',
-    experience: 'Junior',
   };
 
   deleteTodo = todoId => {
