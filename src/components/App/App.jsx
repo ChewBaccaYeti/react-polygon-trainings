@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Counter from 'components/Counter';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
-import ToDoList from 'components/ToDoList';
+import ToDoList from 'components/TodoList';
 import initialTodos from '../../todos.json';
 
 const colorPickerOptions = [
