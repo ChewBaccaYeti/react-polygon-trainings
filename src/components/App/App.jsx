@@ -4,7 +4,7 @@ import shortid from 'shortid';
 import Counter from 'components/Counter';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
-import TodoList from 'components/TodoList';
+import TodoList from 'components/TodoList/TodoList';
 import initialTodos from '../../todos.json';
 import Container from 'components/Container';
 import Form from 'components/Form';
