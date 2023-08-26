@@ -1,12 +1,15 @@
-//2nd branch for 2nd lecture
-import React, { Component } from 'react';
-import shortid from 'shortid';
+import { Component } from 'react';
+import { GlobalStyle } from 'utils/GlobalStyle';
+import { ProductReviewForm } from 'components/ProductReviewForm/ProductReviewForm';
 
-class App extends Component {
-  state = {};
-
+export class App extends Component {
   render() {
-    return;
+    return (
+      <>
+        <GlobalStyle />
+        <ProductReviewForm />
+      </>
+    );
   }
 }
 
