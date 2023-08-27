@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //3rd branch for 3rd lecture
 import React, { Component } from 'react';
 import shortid from 'shortid';
@@ -173,6 +174,19 @@ class App extends Component {
         )}
         {/* Данная модалка может быть использована много раз*/}
       </Container>
+=======
+import { Component } from 'react';
+import { GlobalStyle } from 'utils/GlobalStyle';
+import { ProductReviewForm } from 'components/ProductReviewForm/ProductReviewForm';
+
+export class App extends Component {
+  render() {
+    return (
+      <>
+        <GlobalStyle />
+        <ProductReviewForm />
+      </>
+>>>>>>> fe42be58dbd460e3b2fe70f868ac665711815bb9
     );
   }
 }
