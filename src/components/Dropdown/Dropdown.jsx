@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Dropdown.css';
 
-class Dropdown extends Component {
+export default class Dropdown extends Component {
   state = {
     visible: false,
     hoverColor: '',
@@ -57,5 +57,3 @@ class Dropdown extends Component {
     );
   }
 }
-
-export default Dropdown;

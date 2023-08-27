@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import Container from 'components/Container';
 
-class Form extends Component {
+export default class Form extends Component {
   state = {
     name: 'Lebovski',
     tag: 'Dude',
@@ -155,5 +155,3 @@ class Form extends Component {
     );
   }
 }
-
-export default Form;

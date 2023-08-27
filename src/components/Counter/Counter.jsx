@@ -5,7 +5,7 @@ import './Value/Value.css';
 import Controls from './Controls/Controls';
 import Value from './Value/Value';
 
-class Counter extends React.Component {
+export default class Counter extends React.Component {
   // Начальное состояние от props
   static defaultProps = {
     initialValue: 0,
@@ -94,8 +94,6 @@ class Counter extends React.Component {
     );
   }
 }
-
-export default Counter;
 
 // Компоненты перерендеваются в 2х случаях =>
 // 1) Если в них приходят новые свойства(props)

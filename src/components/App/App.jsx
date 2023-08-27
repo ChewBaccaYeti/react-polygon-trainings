@@ -1,15 +1,17 @@
-//2nd branch for 2nd lecture
+//3rd branch for 3rd lecture
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import Counter from 'components/Counter';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
 import TodoList from 'components/TodoList';
-import initialTodos from '../../todos.json';
 import Container from 'components/Container';
 import Form from 'components/Form';
 import ToDoEditor from 'components/TodoEditor';
 import Filter from 'components/Filter';
+import Modal from 'components/Modal';
+import initialTodos from '../../todos.json';
+import tabs from '../../tabs.json';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -24,7 +26,30 @@ class App extends Component {
   state = {
     todos: initialTodos,
     filter: '',
+    showModal: false,
   };
+
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+
+    if (parsedTodos) {
+      this.setState({ todos: parsedTodos }); // Это перезапишет массив и не даст ему получить свойства null.
+    }
+
+    console.log(parsedTodos);
+  }
+
+  componentDidUpdate(PrevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
 
   addTodo = text => {
     const todo = {
@@ -96,8 +121,14 @@ class App extends Component {
     );
   };
 
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
   render() {
-    const { todos, filter } = this.state;
+    const { todos, filter, showModal } = this.state;
     const totalTodoCount = todos.length;
     const completedTodoCount = this.calculateCompletedTodos();
     const visibleTodos = this.getVisibleTodos();
@@ -128,6 +159,19 @@ class App extends Component {
         />
         <ToDoEditor onSubmit={this.addTodo} />
         <Filter value={filter} onChange={this.changeFilter} />
+        <button type="button" onClick={this.toggleModal}>
+          Открыть модальное окно
+        </button>
+        {showModal && (
+          <Modal>
+            <h1>Привет! Это контент модалки как children.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button type="button" onClick={this.toggleModal}>
+              Закрыть модальное окно
+            </button>
+          </Modal>
+        )}
+        {/* Данная модалка может быть использована много раз*/}
       </Container>
     );
   }

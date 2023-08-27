@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './TodoEditor.scss';
 
-class TodoEditor extends Component {
+export default class TodoEditor extends Component {
   state = {
     message: '',
   };
@@ -33,5 +33,3 @@ class TodoEditor extends Component {
     );
   }
 }
-
-export default TodoEditor;
