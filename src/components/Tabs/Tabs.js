@@ -6,6 +6,8 @@ export default class Tabs extends PureComponent {
   };
 
   // shouldComponentUpdate(nextProps, nextState) {
+  // В данном случае используется PureComponent и это автоматически ре-рендерит под капотом данный метод
+  // При использовании данного метода берется ссылка на СЛЕДУЮЩИЕ props
   //   return nextState.activeTabIdx !== this.state.activeTabIdx;
   // }
 

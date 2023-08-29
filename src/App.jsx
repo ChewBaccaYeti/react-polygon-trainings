@@ -10,7 +10,7 @@ import Modal from './components/Modal';
 import IconButton from './components/IconButton';
 // import Tabs from './components/Tabs';
 // import tabs from './tabs.json';
-// import Clock from './components/Clock';
+import Clock from './components/Clock';
 // import initialTodos from './todos.json';
 
 class App extends Component {
@@ -134,6 +134,7 @@ class App extends Component {
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
         />
+        <Clock />
       </Container>
     );
   }

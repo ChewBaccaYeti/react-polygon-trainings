@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 import './Modal.scss';
 
-const modalRoot = document.createElement('#modal-root');
+const modalRoot = document.createElement('div');
+modalRoot.id = 'modal-root';
 
 export default class Modal extends Component {
   componentDidMount() {
@@ -39,9 +40,9 @@ export default class Modal extends Component {
       <div className="Modal__backdrop" onClick={this.handleBackdropClick}>
         <div className="Modal__content">{this.props.children}</div>
       </div>,
-      {
-        /*Это модальное окно я могу использовать сколько угодно раз и где угодно в приложении.*/
-      },
+      // {
+      //   /*Это модальное окно я могу использовать сколько угодно раз и где угодно в приложении.*/
+      // },
       modalRoot
     );
   }
