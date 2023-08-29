@@ -1,4 +1,4 @@
-//3rd branch for 3rd lecture
+//3rd lesson-lifecycle
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import { ReactComponent as AddIcon } from './icons/add.svg';
