@@ -1,3 +1,4 @@
+// 3rd branch for lifecycle lesson(practice)
 import { Component } from 'react';
 import { VideoList } from 'components/VideoList/VideoList';
 import { Player } from 'components/Player/Player';
