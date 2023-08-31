@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/react-polygon-trainings/static/css/main.31d6cfe0.css",
+    "main.js": "/react-polygon-trainings/static/js/main.8b2e7a2d.js",
+    "index.html": "/react-polygon-trainings/index.html",
+    "main.8b2e7a2d.js.map": "/react-polygon-trainings/static/js/main.8b2e7a2d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.8b2e7a2d.js"
+  ]
+}
