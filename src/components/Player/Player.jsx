@@ -8,8 +8,8 @@ export class Player extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.url !== this.props.url) {
-      console.log('Новый URL: ' + prevProps.url);
       this.setState({ isVideoLoaded: false });
+      console.log('Новый URL: ' + prevProps.url);
     }
   }
   render() {
