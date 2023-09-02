@@ -1,22 +1,35 @@
-import { Component } from 'react';
-import { VideoList } from 'components/VideoList/VideoList';
-import { Player } from 'components/Player/Player';
-import videos from './components/videos.json';
+import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import PokemonForm from 'components/PokemonForm';
+import PokemonInfo from 'components/PokemonInfo';
+
 export class App extends Component {
   state = {
-    selectedVideo: null,
+    pokemonName: '',
   };
 
-  selectVideo = link => {
-    this.setState({ selectedVideo: link });
+  handleFormSubmit = pokemonName => {
+    this.setState({ pokemonName });
+    console.log(pokemonName);
   };
 
   render() {
     return (
-      <div style={{ padding: 24 }}>
-        <h1>Selected video: {this.state.selectedVideo}</h1>
-        <VideoList videos={videos} onSelect={this.selectVideo} />
-        <Player url={this.state.selectedVideo} />
+      <div style={{ maxWidth: 1170, margin: '0 auto', padding: 20 }}>
+        <PokemonForm onSubmit={this.handleFormSubmit} />
+        <PokemonInfo pokemonName={this.state.pokemonName} />
+        <ToastContainer
+          position="top-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </div>
     );
   }
