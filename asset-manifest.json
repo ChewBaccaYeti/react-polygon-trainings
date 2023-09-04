@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/react-polygon-trainings/static/css/main.06054907.css",
-    "main.js": "/react-polygon-trainings/static/js/main.9c341fc4.js",
+    "main.css": "/react-polygon-trainings/static/css/main.18c81a9a.css",
+    "main.js": "/react-polygon-trainings/static/js/main.3cb1d802.js",
+    "static/media/error.jpg": "/react-polygon-trainings/static/media/error.7d86105a62bf3b28ec78.jpg",
+    "static/media/pending.png": "/react-polygon-trainings/static/media/pending.0a1eae6751ef99f3c91c.png",
     "index.html": "/react-polygon-trainings/index.html",
-    "main.06054907.css.map": "/react-polygon-trainings/static/css/main.06054907.css.map",
-    "main.9c341fc4.js.map": "/react-polygon-trainings/static/js/main.9c341fc4.js.map"
+    "main.18c81a9a.css.map": "/react-polygon-trainings/static/css/main.18c81a9a.css.map",
+    "main.3cb1d802.js.map": "/react-polygon-trainings/static/js/main.3cb1d802.js.map"
   },
   "entrypoints": [
-    "static/css/main.06054907.css",
-    "static/js/main.9c341fc4.js"
+    "static/css/main.18c81a9a.css",
+    "static/js/main.3cb1d802.js"
   ]
 }
