@@ -20,7 +20,7 @@ export const MaterialEditorForm = ({ onSubmit }) => {
       {({ isSubmitting }) => (
         <Form className={styles.form}>
           <label className={styles.label}>
-            Discription:
+            Description:
             <Input name="title" type="text" />
           </label>
           <label className={styles.label}>

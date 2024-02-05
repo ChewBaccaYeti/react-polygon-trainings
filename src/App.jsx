@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { GlobalStyle } from 'utils/GlobalStyle';
 import { Layout } from 'utils/Layout';
-import { MaterialList } from 'components/MsterialList/MaterialList';
+import { MaterialList } from 'components/MaterialList/MaterialList';
 import { MaterialEditorForm } from 'components/MaterialEditorForm/MaterialEditorForm';
 import * as API from 'services/api';
 
