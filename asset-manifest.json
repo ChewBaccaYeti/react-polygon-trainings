@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-polygon-trainings/static/css/main.54dd2625.css",
-    "main.js": "/react-polygon-trainings/static/js/main.e17325f1.js",
+    "main.js": "/react-polygon-trainings/static/js/main.d32e412c.js",
     "index.html": "/react-polygon-trainings/index.html",
     "main.54dd2625.css.map": "/react-polygon-trainings/static/css/main.54dd2625.css.map",
-    "main.e17325f1.js.map": "/react-polygon-trainings/static/js/main.e17325f1.js.map"
+    "main.d32e412c.js.map": "/react-polygon-trainings/static/js/main.d32e412c.js.map"
   },
   "entrypoints": [
     "static/css/main.54dd2625.css",
-    "static/js/main.e17325f1.js"
+    "static/js/main.d32e412c.js"
   ]
 }
